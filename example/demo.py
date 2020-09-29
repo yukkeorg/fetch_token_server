@@ -5,7 +5,7 @@ import logging
 from requests_oauthlib import OAuth2Session
 from dotenv import load_dotenv
 
-from .fetch_token_server import serve_fetch_token_server
+from . import serve_fetch_token_server
 
 GITHUB_AUTH_URL = "https://github.com/login/oauth/authorize"
 GITHUB_TOKEN_URL = "https://github.com/login/oauth/access_token"
