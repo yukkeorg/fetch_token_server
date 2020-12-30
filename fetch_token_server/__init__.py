@@ -17,7 +17,7 @@ def serve_fetch_token_server(host="localhost", port=8888):
 
             q.put("http://{}:{}{}".format(host, port, self.path))
 
-            # prevent deadlock
+            # prevent deadlock in shuting down server.
             threading.Thread(target=self.server.shutdown, daemon=True).start()
 
     with HTTPServer((host, port), fetchTokenRequestHandler) as httpd:
